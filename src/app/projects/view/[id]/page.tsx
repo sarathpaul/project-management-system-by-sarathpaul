@@ -85,7 +85,7 @@ export default function page() {
     // 4. Update the current project view so the table refreshes
     const refreshedProject = updatedProjects.find((p) => p.id === project?.id);
     if (refreshedProject) setProject(refreshedProject);
-    setProjects(updatedProjects)
+    setProjects(updatedProjects);
   };
 
   const handleSubmit = (e: React.FormEvent) => {
@@ -129,7 +129,7 @@ export default function page() {
       setMode("add");
       const currentProject = finalProjectsList.find((itm) => itm.id === id);
       if (currentProject) setProject(currentProject);
-      setProjects(finalProjectsList)
+      setProjects(finalProjectsList);
     } catch (error) {
       console.error("Failed to save task:", error);
     }
@@ -327,7 +327,11 @@ export default function page() {
                         >
                           Edit
                         </Button>
-                        <Button onClick={() => handleDeleteTask(itm.id || "")} size="sm" variant="danger">
+                        <Button
+                          onClick={() => handleDeleteTask(itm.id || "")}
+                          size="sm"
+                          variant="danger"
+                        >
                           Delete
                         </Button>
                       </div>

@@ -1,6 +1,12 @@
 import { ButtonHTMLAttributes, forwardRef } from "react";
 
-type ButtonVariant = "primary" | "secondary" | "outline" | "danger" | "ghost" | "success";
+type ButtonVariant =
+  | "primary"
+  | "secondary"
+  | "outline"
+  | "danger"
+  | "ghost"
+  | "success";
 type ButtonSize = "sm" | "md" | "lg";
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
@@ -12,18 +18,13 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 }
 
 const variantStyles: Record<ButtonVariant, string> = {
-  primary:
-    "bg-[#030213] text-white hover:opacity-90 border border-transparent",
-  secondary:
-    "bg-primary text-white hover:opacity-90 border border-transparent",
-  outline:
-    "bg-white text-gray-700 border border-gray-300 hover:bg-gray-50",
-  danger:
-    "bg-red-600 text-white hover:opacity-90 border border-transparent",
+  primary: "bg-[#030213] text-white hover:opacity-90 border border-transparent",
+  secondary: "bg-primary text-white hover:opacity-90 border border-transparent",
+  outline: "bg-white text-gray-700 border border-gray-300 hover:bg-gray-50",
+  danger: "bg-red-600 text-white hover:opacity-90 border border-transparent",
   ghost:
     "bg-transparent text-gray-600 hover:bg-gray-100 border border-transparent",
-  success:
-    "bg-[#1B8445] text-white hover:opacity-90 border border-transparent",
+  success: "bg-[#1B8445] text-white hover:opacity-90 border border-transparent",
 };
 
 const sizeStyles: Record<ButtonSize, string> = {

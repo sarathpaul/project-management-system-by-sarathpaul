@@ -1,12 +1,9 @@
 "use client";
-import Image from "next/image";
-import { ClipboardList } from "lucide-react";
 import Dashboard from "@/components/Dashboard"
 import ProjectsList from "@/components/ProjectsList"
 import { useState, useEffect } from "react";
 import { getProjects, AddProjects } from "@/utils/storage";
 import { Project } from "@/types/project";
-import { User } from "@/types/user";
 import { projectsData } from "@/utils/data";
 
 export default function Home() {

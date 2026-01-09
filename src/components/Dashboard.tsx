@@ -1,15 +1,13 @@
-import React from "react";
 import Link from "next/link";
 import Button from "@/components/ui/Button";
 import { Project } from "@/types/project";
-import OverallProjectDetails from "@/components/OverallProjectDetails"
+import OverallProjectDetails from "@/components/OverallProjectDetails";
 
 interface DashboardProps {
   projects: Project[];
 }
 
-
-const Dashboard = ({projects}: DashboardProps) => {
+const Dashboard = ({ projects }: DashboardProps) => {
   return (
     <div>
       <div className="grid md:grid-cols-4">

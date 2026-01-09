@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { Project } from "@/types/project";
 import Badge from "./ui/Badge";
 import ProgressBar from "@/components/ui/ProgressBar";
@@ -83,7 +83,10 @@ const ProjectCard = ({ project }: ProjectCardProps) => {
             <div className="flex items-center -space-x-3">
               {assignedInitials.length !== 0 &&
                 assignedInitials.map((itm) => (
-                  <div key={itm} className="relative inline-flex items-center justify-center w-9 h-9 text-xs font-medium text-white bg-blue-500 border-2 border-white rounded-full hover:z-10 transition-all cursor-default">
+                  <div
+                    key={itm}
+                    className="relative inline-flex items-center justify-center w-9 h-9 text-xs font-medium text-white bg-blue-500 border-2 border-white rounded-full hover:z-10 transition-all cursor-default"
+                  >
                     <p>{itm}</p>
                   </div>
                 ))}

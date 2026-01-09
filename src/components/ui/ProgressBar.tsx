@@ -1,10 +1,12 @@
 interface ProgressBarProps {
-  progress: number; // A number between 0 and 100
-  color?: string;   // Optional custom color
+  progress: number;
+  color?: string;
 }
 
-const ProgressBar: React.FC<ProgressBarProps> = ({ progress, color = "bg-blue-600" }) => {
-  // Ensure progress stays between 0 and 100
+const ProgressBar: React.FC<ProgressBarProps> = ({
+  progress,
+  color = "bg-blue-600",
+}) => {
   const clampedProgress = Math.min(Math.max(progress, 0), 100);
 
   return (

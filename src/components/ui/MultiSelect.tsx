@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 
-// Define the shape of a single option
 interface Option {
   id: string;
   name: string;
@@ -8,7 +7,6 @@ interface Option {
   initials: string;
 }
 
-// Define the Props the component will accept
 interface MultiSelectProps {
   options: Option[];
   label: string;
@@ -21,10 +19,10 @@ const MultiSelect: React.FC<MultiSelectProps> = ({ options, label, selectedValue
 
   const toggleOption = (val: string) => {
     const newSelection = selectedValues.includes(val)
-      ? selectedValues.filter((item) => item !== val) // Remove if exists
-      : [...selectedValues, val]; // Add if not exists
+      ? selectedValues.filter((item) => item !== val)
+      : [...selectedValues, val];
     
-    onChange(newSelection); // Send the update back to the parent
+    onChange(newSelection);
   };
 
   return (

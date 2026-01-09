@@ -25,7 +25,7 @@ interface FormData {
 }
 
 const page = () => {
-  const router = useRouter()
+  const router = useRouter();
   const [projects, setProjects] = useState<Project[]>([]);
   const [users, setUsers] = useState<User[]>([]);
   const [selectedAssinees, setSelectedAssinees] = useState<string[]>([]);
@@ -103,9 +103,9 @@ const page = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    if(formData.name == "") {
-      alert("Please Input Project name")
-      return
+    if (formData.name == "") {
+      alert("Please Input Project name");
+      return;
     }
     const payload = {
       ...formData,
@@ -115,7 +115,7 @@ const page = () => {
     };
     try {
       AddProjects([...projects, payload]);
-      router.push("/")
+      router.push("/");
     } catch (error) {}
   };
 

@@ -5,7 +5,7 @@ import Link from "next/link";
 import Button from "@/components/ui/Button";
 import { ArrowLeft } from "lucide-react";
 import { User } from "@/types/user";
-import { Project, ProjectStatus, TaskStatus, Priority } from "@/types/project";
+import { Project, ProjectStatus, Priority } from "@/types/project";
 import { userList, projectsData } from "@/utils/data";
 import { getUsers, AddUser, AddProjects, getProjects } from "@/utils/storage";
 import { Task, Reminder } from "@/types/project";
@@ -26,7 +26,7 @@ interface FormData {
 }
 
 const page = () => {
-   const router = useRouter()
+  const router = useRouter();
   const params = useParams();
   const id = params.id;
   const [projects, setProjects] = useState<Project[]>([]);
@@ -64,8 +64,8 @@ const page = () => {
 
     if (safeList.length > 0) {
       setProjects(safeList);
-      const selectedProject = safeList.find((itm) => itm.id == id)
-      if(selectedProject) {
+      const selectedProject = safeList.find((itm) => itm.id == id);
+      if (selectedProject) {
         setProject(selectedProject);
         setFormData({
           name: selectedProject.name,
@@ -79,9 +79,8 @@ const page = () => {
           tasks: selectedProject.tasks ?? [],
           reminders: selectedProject.reminders ?? [],
         });
-        setSelectedAssinees(selectedProject.assigneeIds)
-        setReminders(selectedProject.reminders)
-
+        setSelectedAssinees(selectedProject.assigneeIds);
+        setReminders(selectedProject.reminders);
       }
     } else {
       setProjects(projectsData);
@@ -134,9 +133,9 @@ const page = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    if(formData.name == "") {
-      alert("Please Input Project name")
-      return
+    if (formData.name == "") {
+      alert("Please Input Project name");
+      return;
     }
     const payload = {
       ...formData,
@@ -144,11 +143,11 @@ const page = () => {
       reminders: reminders,
     };
     try {
-      const updatedProjects = projects.map((p) => 
-      p.id === id ? { ...p, ...payload } : p
-    );
+      const updatedProjects = projects.map((p) =>
+        p.id === id ? { ...p, ...payload } : p
+      );
       AddProjects(updatedProjects);
-      router.push("/")
+      router.push("/");
     } catch (error) {}
   };
 
